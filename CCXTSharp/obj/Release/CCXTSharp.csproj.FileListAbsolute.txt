@@ -1,0 +1,9 @@
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\bin\Release\CCXTSharp.dll
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\bin\Release\CCXTSharp.pdb
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\bin\Release\Newtonsoft.Json.dll
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\bin\Release\Newtonsoft.Json.xml
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Release\CCXTSharp.csproj.CoreCompileInputs.cache
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Release\CCXTSharp.csproj.CopyComplete
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Release\CCXTSharp.dll
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Release\CCXTSharp.pdb
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Release\CCXTSharp.csprojAssemblyReference.cache

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CCXTSharp</id>
+    <version>1.0.0</version>
+    <description>A cryptocurrency trading library with support for more than 100 bitcoin/altcoin exchanges. Uses original ccxt (python) code.</description>
+    <title>CCXTSharp</title>
+    <authors>Stock84-dev</authors>
+    <!-- TODO: update urls -->
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>altcoin api arbitrage bitcoin bot cryptocurrency crypto e-commerce ethereum exchange invest library strategy trading btc eth trade merchant market-data exchange-api trading-api exchange-markets ccxt</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="11.0.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\CCXTSharp.dll" target="lib\net45"></file>
+    <file src="..\CCXT\dist\ccxtAPI.exe" target="content\ccxt" />
+    <file src="..\CCXT\ccxtAPI.py" target="content\ccxt\scripts" />
+    <file src="..\CCXT\CCXTException.py" target="content\ccxt\scripts" />
+    <file src="..\CCXT\NamedPipes.py" target="content\ccxt\scripts" />
+  </files>
+</package>

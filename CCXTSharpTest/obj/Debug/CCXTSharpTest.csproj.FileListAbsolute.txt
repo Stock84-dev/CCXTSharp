@@ -1,0 +1,12 @@
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\CCXTSharpTest.exe.config
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\CCXTSharpTest.exe
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\CCXTSharpTest.pdb
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\CCXTSharp.dll
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\CCXTSharp.pdb
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.csprojAssemblyReference.cache
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.csproj.CoreCompileInputs.cache
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.csproj.CopyComplete
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.exe
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.pdb

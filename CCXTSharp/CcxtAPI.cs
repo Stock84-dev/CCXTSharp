@@ -18,8 +18,7 @@ namespace CCXTSharp
 
 	public partial class CcxtAPI
 	{
-		private const string PIPE_NAME_OUT = "ccxtAPICryptoWatcher-PythonPipeOut";
-		private const string PIPE_NAME_IN = "ccxtAPICryptoWatcher-PythonPipeIn";
+		private readonly string PIPE_NAME_IN, PIPE_NAME_OUT;
 		private readonly object _msgDataLock = new object();
 		private Process _ccxtAPIProcess;
 		private Dictionary<int, MessageData> _msgData = new Dictionary<int, MessageData>();
@@ -30,9 +29,10 @@ namespace CCXTSharp
 		/// </summary>
 		/// <param name="pathToCcxtAPIScriptOrExe">Path to script or compiled .exe.</param>
 		/// <param name="pathToPythonExe">Python 3.5+ supported.</param>
-		/// <param name="usePythonInterpreter">If you are running script (CcxtAPI.py) then use interpreter.</param>
 		/// <param name="showPythonConsole">Show python console if you are using python interpreter.</param>
-		public CcxtAPI(string pathToCcxtAPIScriptOrExe, string pathToPythonExe = null, bool showPythonConsole = false)
+		/// <param name="pipeNameIn">Rename if you run multiple instances.</param>
+		/// <param name="pipeNameOut">Rename if you run multiple instances.</param>
+		public CcxtAPI(string pathToCcxtAPIScriptOrExe, string pathToPythonExe = null, bool showPythonConsole = false, string pipeNameIn = "CCXTSharp-PipeIn", string pipeNameOut = "CCXTSharp-PipeOut")
 		{
 			bool usePythonInterpreter = pathToPythonExe != null ? true : false;
 
@@ -45,6 +45,8 @@ namespace CCXTSharp
 			if (pathToCcxtAPIScriptOrExe.EndsWith(".exe") && usePythonInterpreter)
 				throw new ArgumentException("Cannot use python interpreter on executable.");
 
+			PIPE_NAME_IN = pipeNameIn;
+			PIPE_NAME_OUT = pipeNameOut;
 			ProcessStartInfo myProcessStartInfo;
 
 			if (usePythonInterpreter)
@@ -90,7 +92,6 @@ namespace CCXTSharp
 		/// </summary>
 		public async Task Close()
 		{
-			//_ccxtAPIProcess.Kill();
 			await _namedPipe.Write("exit");
 
 			lock (_msgDataLock)
@@ -101,6 +102,14 @@ namespace CCXTSharp
 				}
 			}
 		}
+		/// <summary>
+		/// Use this only if python program breaks.
+		/// </summary>
+		public async void Kill()
+		{
+			_ccxtAPIProcess.Kill();
+		}
+
 		/// <summary>
 		/// Returns a list of exchange ids.
 		/// </summary>

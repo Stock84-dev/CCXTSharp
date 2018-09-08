@@ -67,7 +67,6 @@ namespace CCXTSharp
 				}
 			}
 
-			Console.WriteLine("Client disconnected.");
 			_serverIn.Close();
 			_serverIn.Dispose();
 			_serverOut.Close();

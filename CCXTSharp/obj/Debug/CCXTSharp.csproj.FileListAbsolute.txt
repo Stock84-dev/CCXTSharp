@@ -7,3 +7,4 @@ D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Debug\CCXTSharp
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Debug\CCXTSharp.csproj.CopyComplete
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Debug\CCXTSharp.dll
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\obj\Debug\CCXTSharp.pdb
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp\bin\Debug\CCXTSharp.xml

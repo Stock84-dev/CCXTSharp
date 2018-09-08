@@ -9,3 +9,4 @@ D:\Documents\Visual studio 2017\Projects\CCXTSharp\Example\bin\Debug\CCXTSharp.d
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\Example\bin\Debug\Newtonsoft.Json.dll
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\Example\bin\Debug\Newtonsoft.Json.xml
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\Example\obj\Debug\Example.csproj.CopyComplete
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\Example\bin\Debug\CCXTSharp.xml

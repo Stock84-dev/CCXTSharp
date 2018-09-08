@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>CCXTSharp</id>
-    <version>1.0.0</version>
-    <description>A cryptocurrency trading library with support for more than 100 bitcoin/altcoin exchanges. Uses original ccxt (python) code.</description>
+    <version>1.0.1</version>
+    <description>A cryptocurrency trading library with support for more than 100 bitcoin/altcoin exchanges. Uses original ccxt (python) code. https://github.com/ccxt/ccxt </description>
     <title>CCXTSharp</title>
     <authors>Stock84-dev</authors>
     <licenseUrl>https://raw.githubusercontent.com/Stock84-dev/CCXTSharp/master/LICENSE</licenseUrl>
@@ -17,7 +17,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Debug\CCXTSharp.dll" target="lib\net45"></file>
+    <file src="bin\Debug\CCXTSharp.dll" target="lib\net45" />
+    <file src="bin\Debug\CCXTSharp.xml" target="lib\net45" />
     <file src="..\CCXT\dist\ccxtAPI.exe" target="content\ccxt" />
     <file src="..\CCXT\ccxtAPI.py" target="content\ccxt\scripts" />
     <file src="..\CCXT\CCXTException.py" target="content\ccxt\scripts" />

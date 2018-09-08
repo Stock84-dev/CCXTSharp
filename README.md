@@ -3,9 +3,9 @@ This is a c# wrapper for popular trading library [ccxt](https://github.com/ccxt/
 
 ## Instalation
 Package manager
-````
+```
 Install-Package CCXTSharp
-````
+```
 
 ## Updating ccxt library
 1. Install python 3.5+ (python 3.7 isn't currentyl supported by pyinstaller). And add python to system PATH if not already added by instalation.
@@ -26,7 +26,7 @@ Package contains compiled python code that has original ccxt api. C# part create
 
 ## Examples
 List supported exchanges.
-```
+```c#
 // initialize and start process
 CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");	 
 // get list of avaliable exchanges
@@ -37,7 +37,7 @@ exchangeIds.ForEach(id => Console.WriteLine(id));
 await ccxtAPI.Close();
 ```
 List all markets.
-```
+```c#
 // initialize and run script in python interpreter
 CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\scripts\ccxtAPI.py", @"D:\Program Files (x86)\Python36-32\python.exe");  
 // gets list of markets on Binance exchange and prints their symbols
@@ -46,7 +46,7 @@ markets.ForEach(m => Console.WriteLine(m.symbol));
 await ccxtAPI.Close();
 ```
 Checking for implementation.
-```
+```c#
 CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");
 // if cryptopia has support for fetch tickers then fetch them
 if((await ccxtAPI.GetExchangeHas("cryptopia")).fetchTickers == Has.Capability.True)
@@ -61,7 +61,7 @@ if((await ccxtAPI.GetExchangeHas("cryptopia")).fetchTickers == Has.Capability.Tr
 await ccxtAPI.Close();
 ```
 Private API.
-```
+```c#
 CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");
 // Authenticate
 await ccxtAPI.ExchangeApiKey("binance", "my_api_key");
@@ -73,7 +73,7 @@ await ccxtAPI.CancelOrder("binance", order.id, "ETH/USDT");
 await ccxtAPI.Close();
 ```
 Exception handling
-```
+```c#
 CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");
 try
 {

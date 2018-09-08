@@ -6,9 +6,8 @@
     <description>A cryptocurrency trading library with support for more than 100 bitcoin/altcoin exchanges. Uses original ccxt (python) code.</description>
     <title>CCXTSharp</title>
     <authors>Stock84-dev</authors>
-    <!-- TODO: update urls -->
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/Stock84-dev/CCXTSharp/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Stock84-dev/CCXTSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2018</copyright>

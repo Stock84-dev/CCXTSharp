@@ -8,7 +8,7 @@ Install-Package CCXTSharp
 ```
 
 ## Updating ccxt library
-1. Install python 3.5+ (python 3.7 isn't currentyl supported by pyinstaller). And add python to system PATH if not already added by instalation.
+1. Install python 3.5+ (python 3.7 isn't currently supported by pyinstaller). And add python to system PATH if not already added by instalation.
 2. Open cmd.
 3. pip install ccxt         // if libraries are already installed then type pip install ccxt --upgrade
 4. pip install cfscrape

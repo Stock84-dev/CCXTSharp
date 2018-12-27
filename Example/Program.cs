@@ -83,10 +83,27 @@ namespace Example
 			await ccxtAPI.Close();
 		}
 
+		static async void Test()
+		{
+			CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");
+			ccxtAPI.ShowPipeData = true;
+			Console.WriteLine((await ccxtAPI.GetExchangeHas("yobit")).fetchTickers);
+			var tickers = await ccxtAPI.FetchTickers("yobit");
+			var list = from ticker in tickers.Values
+					   orderby ticker.change
+					   orderby ticker.quoteVolume
+					   select ticker;
+			
+
+			foreach (var e in list)
+			{
+				Console.WriteLine(e.symbol + ": " + e.change + " " + e.quoteVolume);
+			}
+		}
+
 		static void Main(string[] args)
 		{
-			Example5();
-
+			Test();
 			while (true)
 			{
 				Thread.Sleep(100);

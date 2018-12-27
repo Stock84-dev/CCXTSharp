@@ -24,6 +24,11 @@
             Closes communication between python ccxt.
             </summary>
         </member>
+        <member name="M:CCXTSharp.CcxtAPI.Kill">
+            <summary>
+            Use this only if python program breaks.
+            </summary>
+        </member>
         <member name="M:CCXTSharp.CcxtAPI.GetExchangIds">
             <summary>
             Returns a list of exchange ids.

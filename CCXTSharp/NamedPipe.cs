@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace CCXTSharp
 		private BinaryWriter _binaryWriter;
 		private BinaryReader _binaryReader;
 		private readonly object _isWritingLock = new object();
+		private bool _serverOutConnected = false;
 
 		public NamedPipe(string pipeNameIn, string pipeNameOut)
 		{
@@ -26,15 +28,18 @@ namespace CCXTSharp
 			_serverIn = new NamedPipeServerStream(pipeNameIn);
 			_binaryWriter = new BinaryWriter(_serverOut);
 			_binaryReader = new BinaryReader(_serverIn);
-			_serverOut.WaitForConnection();
-			_serverIn.WaitForConnection();
 			Task.Factory.StartNew(Reader, TaskCreationOptions.LongRunning);
 		}
-
+		
 		public async Task Write(string str)
 		{
 			await Task.Run(() =>
 			{
+				if (!_serverOutConnected)
+				{
+					_serverOut.WaitForConnection();
+					_serverOutConnected = true;
+				}
 				lock (_isWritingLock)
 				{
 					//Console.WriteLine("write started: " + DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds);
@@ -50,6 +55,8 @@ namespace CCXTSharp
 
 		private void Reader()
 		{
+			_serverIn.WaitForConnection();
+
 			while (true)
 			{
 				try

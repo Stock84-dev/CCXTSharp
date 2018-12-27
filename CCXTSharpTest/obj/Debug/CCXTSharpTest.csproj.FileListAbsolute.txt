@@ -10,3 +10,4 @@ D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTS
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.csproj.CopyComplete
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.exe
 D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Debug\CCXTSharpTest.pdb
+D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Debug\CCXTSharp.xml

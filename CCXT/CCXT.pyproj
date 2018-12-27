@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5d659809-dff8-4d53-8cae-0a66b9e83e46</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ccxtAPI.py</StartupFile>
+    <StartupFile>test.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,9 @@
     <Compile Include="ccxtAPI.py" />
     <Compile Include="CCXTException.py" />
     <Compile Include="NamedPipes.py" />
+    <Compile Include="test.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6-32" />

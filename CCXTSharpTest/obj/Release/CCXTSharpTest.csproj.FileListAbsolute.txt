@@ -1,0 +1,12 @@
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Release\CCXTSharpTest.exe.config
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Release\CCXTSharpTest.exe
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Release\CCXTSharpTest.pdb
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Release\CCXTSharp.dll
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Release\Newtonsoft.Json.dll
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Release\CCXTSharp.pdb
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\bin\Release\Newtonsoft.Json.xml
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Release\CCXTSharpTest.csprojAssemblyReference.cache
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Release\CCXTSharpTest.csproj.CoreCompileInputs.cache
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Release\CCXTSharpTest.csproj.CopyComplete
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Release\CCXTSharpTest.exe
+D:\Documents\Visual Studio 2017\Projects\CCXTSharp\CCXTSharpTest\obj\Release\CCXTSharpTest.pdb

@@ -23,6 +23,25 @@ namespace CCXTSharp
 		private Process _ccxtAPIProcess;
 		private Dictionary<int, MessageData> _msgData = new Dictionary<int, MessageData>();
 		private NamedPipe _namedPipe;
+		private Dictionary<string, int> _rateLimits = new Dictionary<string, int>()
+		{
+			// = not provided, ds = different system
+			{ "_1broker", 1500 }, // ds
+			{ "_1btcxe", 2000 }, // exchange down
+			{ "acx", 50 },
+			{ "allcoin", 1000 }, // 
+			{ "anxpro", 200 },
+			{ "anybits", 2000 }, // 
+			{ "bcex", 2000 }, // 
+			{ "bibox", 2000 }, // 
+			{ "bigone", 10 }, 
+			{ "binance", 864 }, // ds
+			{ "bit2c", 3000 }, // 
+			{ "bitbay", 1000 }, //
+			{ "bitfinex", 1500 }, // ds
+			{ "bitfinex2", 1500 }, // ds
+		};
+
 
 		/// <summary>
 		/// Starts new process with ccxt API.
@@ -105,7 +124,7 @@ namespace CCXTSharp
 		/// <summary>
 		/// Use this only if python program breaks.
 		/// </summary>
-		public async void Kill()
+		public void Kill()
 		{
 			_ccxtAPIProcess.Kill();
 		}
@@ -113,7 +132,7 @@ namespace CCXTSharp
 		/// <summary>
 		/// Returns a list of exchange ids.
 		/// </summary>
-		public async Task<List<string>> GetExchangIds()
+		public async Task<List<string>> GetExchangeIds()
 		{
 			return await GetData<List<string>>("exchanges", "ccxt", null, false);
 		}
@@ -392,6 +411,10 @@ namespace CCXTSharp
 		}
 		#endregion
 
+		/// <summary>
+		/// Gets wait time in ms after each call it's less restictive than original ccxt raleLimit.
+		/// </summary>
+		//public Dictionary<string,int> RateLimits { get { return _rateLimits; } }
 
 		public static string TimeframeToKey(Timeframe timeframe)
 		{

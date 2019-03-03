@@ -19,7 +19,8 @@ def run(corofn, *args):
 
 async def Read(pipe):
     text = pipe.Read()
-    if text == bytes("exit", 'utf-8'):
+    if text == "exit":
+        pipe.Close()
         os._exit(0)
     return text
 
@@ -48,7 +49,7 @@ class CCXTAPI:
                 continue
             except Exception as ex:
                 self.__pipe.Write("error" + str(CCXTException.CCXTException(type(ex).__name__, str(ex)).__dict__) + str(data["callNumber"]))
-                logger.log(text[0])
+                #logger.log(text[0])
                 print("error")
 
            

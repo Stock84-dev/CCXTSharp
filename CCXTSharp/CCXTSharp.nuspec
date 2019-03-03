@@ -2,15 +2,15 @@
 <package >
   <metadata>
     <id>CCXTSharp</id>
-    <version>1.0.1</version>
+    <version>1.2.0</version>
     <description>A cryptocurrency trading library with support for more than 100 bitcoin/altcoin exchanges. Uses original ccxt (python) code. https://github.com/ccxt/ccxt </description>
     <title>CCXTSharp</title>
     <authors>Stock84-dev</authors>
     <licenseUrl>https://raw.githubusercontent.com/Stock84-dev/CCXTSharp/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Stock84-dev/CCXTSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>Initial release.</releaseNotes>
-    <copyright>Copyright 2018</copyright>
+    <releaseNotes>Added support for Linux. Fixed json parsing in FetchOHLCV method. Updated ccxt to v1.18.322.</releaseNotes>
+    <copyright>Copyright 2018-2019</copyright>
     <tags>altcoin api arbitrage bitcoin bot cryptocurrency crypto e-commerce ethereum exchange invest library strategy trading btc eth trade merchant market-data exchange-api trading-api exchange-markets ccxt</tags>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="11.0.2" />

@@ -13,7 +13,7 @@ namespace Example
 		static async void Example1()
 		{
 			CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");				// initialize and start process
-			List<string> exchangeIds = await ccxtAPI.GetExchangIds();				// get list of avaliable exchanges
+			List<string> exchangeIds = await ccxtAPI.GetExchangeIds();				// get list of avaliable exchanges
 			exchangeIds.ForEach(id => Console.WriteLine(id));						// print all exchange ids
 			await ccxtAPI.Close();													// it's preferred to exit other process if your program will close
 		}
@@ -32,13 +32,13 @@ namespace Example
 		{
 			CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");
 			// if cryptopia has support for fetch tickers then fetch them
-			if((await ccxtAPI.GetExchangeHas("cryptopia")).fetchTickers == Has.Capability.True)
+			if((await ccxtAPI.GetExchangeHas("binance")).fetchTickers == Has.Capability.True)
 			{
-				Dictionary<string, Ticker> tickers = await ccxtAPI.FetchTickers("cryptopia");
+				Dictionary<string, Ticker> tickers = await ccxtAPI.FetchTickers("binance");
 				// foreach ticker print their symbol and change
 				foreach (var ticker in tickers.Values)
 				{
-					Console.WriteLine(ticker.symbol + ": " + ticker.change);
+					Console.WriteLine(ticker.symbol + ": " + ticker.percentage);
 				}
 			}
 			await ccxtAPI.Close();
@@ -83,6 +83,14 @@ namespace Example
 			await ccxtAPI.Close();
 		}
 
+		static async void Example6()
+		{
+			CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");               
+			List<Candlestick> candles = await ccxtAPI.FetchOHLCV("binance", "BTC/USDT", Timeframe.min1);
+			candles.ForEach(c => Console.WriteLine(c.close));                       
+			await ccxtAPI.Close();                                                 
+		}
+
 		static async void Test()
 		{
 			CcxtAPI ccxtAPI = new CcxtAPI(@"..\..\ccxt\ccxtAPI.exe");
@@ -103,7 +111,7 @@ namespace Example
 
 		static void Main(string[] args)
 		{
-			Test();
+			Example6();
 			while (true)
 			{
 				Thread.Sleep(100);

@@ -1,2 +1,4 @@
-D:\Documents\Visual studio 2017\Projects\CCXTSharp\CCXTSharp>
-nuget push CCXTSharp.1.0.1.nupkg -ApiKey YOUR_API_KEY -Source https://api.nuget.org/v3/index.json -Timeout 3600
+nuget pack CCXTSharp.nuspec
+
+
+nuget push PACKAGE.nupkg -ApiKey YOUR_API_KEY -Source https://api.nuget.org/v3/index.json -Timeout 3600

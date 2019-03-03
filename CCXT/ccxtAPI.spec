@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['ccxtAPI.py'],
-             pathex=['D:\\Documents\\Visual Studio 2017\\Projects\\CCXTSharp\\CCXT'],
+             pathex=['D:\\Documents\\New folder\\CCXTSharp\\CCXT'],
              binaries=[],
              datas=[],
              hiddenimports=[],

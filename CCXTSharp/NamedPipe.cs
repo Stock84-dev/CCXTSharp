@@ -25,12 +25,13 @@ namespace CCXTSharp
 		public NamedPipe(string pipeNameIn, string pipeNameOut)
 		{
 			_serverOut = new NamedPipeServerStream(pipeNameOut);
+
 			_serverIn = new NamedPipeServerStream(pipeNameIn);
 			_binaryWriter = new BinaryWriter(_serverOut);
 			_binaryReader = new BinaryReader(_serverIn);
 			Task.Factory.StartNew(Reader, TaskCreationOptions.LongRunning);
 		}
-		
+
 		public async Task Write(string str)
 		{
 			await Task.Run(() =>
@@ -44,13 +45,21 @@ namespace CCXTSharp
 				{
 					//Console.WriteLine("write started: " + DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds);
 					byte[] buf = Encoding.ASCII.GetBytes(str);     // Get ASCII byte array  
-
 					_binaryWriter.Write((uint)buf.Length);         // Write string length
 					_binaryWriter.Write(buf);
 					//Console.WriteLine("write ended: " + DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds);
 				}
 			});
 
+		}
+
+		public async Task Close()
+		{
+			await Write("exit");
+			_serverIn.Close();
+			_serverIn.Dispose();
+			_serverOut.Close();
+			_serverOut.Dispose();
 		}
 
 		private void Reader()
@@ -64,20 +73,16 @@ namespace CCXTSharp
 					//Console.WriteLine("read started: " + DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds);
 					var len = (int)_binaryReader.ReadUInt32();            // Read string length
 					var str = new string(_binaryReader.ReadChars(len));    // Read string
-					// invoking on another thread so it wouldn't stop reader loop
-					Task.Run(()=> OnMessage?.Invoke(this, new OnMessageEventArgs(str)));
+																		   // invoking on another thread so it wouldn't stop reader loop
+					Task.Run(() => OnMessage?.Invoke(this, new OnMessageEventArgs(str)));
 					//Console.WriteLine("read ended: " + DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds);
 				}
 				catch (EndOfStreamException)
 				{
 					break;                    // When client disconnects
 				}
-			}
 
-			_serverIn.Close();
-			_serverIn.Dispose();
-			_serverOut.Close();
-			_serverOut.Dispose();
+			}
 		}
 
 		public class OnMessageEventArgs : EventArgs

@@ -34,7 +34,7 @@ namespace CCXTSharp
 			{ "anybits", 2000 }, // 
 			{ "bcex", 2000 }, // 
 			{ "bibox", 2000 }, // 
-			{ "bigone", 10 }, 
+			{ "bigone", 10 },
 			{ "binance", 864 }, // ds
 			{ "bit2c", 3000 }, // 
 			{ "bitbay", 1000 }, //
@@ -111,7 +111,7 @@ namespace CCXTSharp
 		/// </summary>
 		public async Task Close()
 		{
-			await _namedPipe.Write("exit");
+			await _namedPipe.Close();
 
 			lock (_msgDataLock)
 			{
@@ -309,9 +309,7 @@ namespace CCXTSharp
 		public async Task<List<Candlestick>> FetchOHLCV(string exchangeId, string symbol, Timeframe? timeframe = null, long? since = null, int? limit = null, Dictionary<string, object> parameters = null)
 		{
 			string timeframeKey = timeframe != null ? TimeframeToKey(timeframe.Value) : null;
-			var response = JObject.Parse(await GetData<string>("fetchOHLCV", exchangeId, null, true, -1, false, symbol, timeframeKey, since, limit, parameters));
-			return (from responseCandle in response.Children()
-					select new Candlestick(responseCandle[0].ToObject<long>(), responseCandle[1].ToObject<float>(), responseCandle[2].ToObject<float>(), responseCandle[3].ToObject<float>(), responseCandle[4].ToObject<float>(), responseCandle[5].ToObject<float>())).ToList();
+			return await FetchOHLCV(exchangeId, symbol, timeframeKey, since, limit, parameters);
 
 		}
 
@@ -506,8 +504,10 @@ namespace CCXTSharp
 
 		private void OnMessage(object sender, NamedPipe.OnMessageEventArgs e)
 		{
-			if(ShowPipeData)
+			if (ShowPipeData)
+			{
 				Console.WriteLine(e.Message);
+			}
 			int i;
 			for (i = e.Message.Length - 1; i >= 0; i--)
 			{
@@ -574,7 +574,7 @@ namespace CCXTSharp
 		public Dictionary<string, object> info { get; set; }
 
 		public enum TransactionType { deposit, withdrawal }
-		public enum TransactionStatus { ok, failed, canceled}
+		public enum TransactionStatus { ok, failed, canceled }
 	}
 
 	public class Address
